@@ -27,25 +27,28 @@
           <form name="editForm" novalidate class="form-horizontal">
             <fieldset>
               <div class="MediaEdit">
+                <span ng-repeat="province in provinces track by $index" style="border: solid 1px #808080;margin:2px;padding:2px">
+                  {{$index+1}} - {{province}}
+                </span><br /><br />
                 <div class="form-group">
                   <div class="col-md-2">
                     Province:
                   </div>
                   <div class="col-md-2">
-                    <input type="text" id="province" name="province" class="form-control" data-ng-keyup="captureForm('province', 'district')" data-ng-model="form.province" required />
+                    <input type="text" id="province" name="province" class="form-control" data-ng-keyup="captureForm('province', 'invitation')" data-ng-model="form.province" required />
                   </div>
                   <div class="col-md-8">
                     {{showProvince}}
                   </div>
                 </div>
-                <div class="form-group">
+                <!--<div class="form-group">
                   <div class="col-md-2">
                     District / Region:
                   </div>
                   <div class="col-md-10">
                     <input type="text" id="district" name="district" class="form-control" data-ng-model="form.district" />
                   </div>
-                </div>
+                </div>-->
                 <div>
                   <b>Section A:  General organisation and administration</b><br /><hr />
                 </div>

@@ -40,6 +40,7 @@ app.controller('captureController', ['$scope', '$http', 'ngSettings', '$routePar
     $scope.showRecommend = '';
     $scope.showLength = '';
     $scope.crud = 'Add';
+    $('#province').select();
   }
 
   $scope.clear = function () {
@@ -47,7 +48,8 @@ app.controller('captureController', ['$scope', '$http', 'ngSettings', '$routePar
   }
   $scope.init();
   $scope.crud = "Add";
-  $scope.provinces = ['Gauteng', 'Eastern Cape', 'Kwa-Zulu Natal', 'Western Cape', 'North West Province', 'Free State', 'Northern Cape', 'Eight', 'Nine'];
+
+  $scope.provinces = ['Eastern Cape','Free State', 'Gauteng', 'Kwa-Zulu Natal', 'Limpopo','Mpumalanga','North West', 'Northern Cape', 'Western Cape'];
   $scope.options5 = ['poor', 'reasonable', 'average', 'good', 'excellent'];
   $scope.options3 = ['Too long', 'Just right', 'Too short'];
   $scope.options2 = ['YES', 'NO'];
