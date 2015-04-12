@@ -1,0 +1,225 @@
+﻿<div class="view">
+  <div class="container">
+    <header>
+      <h4><span class="glyphicon glyphicon-edit"></span> {{crud}} Teacher Workshop Evaluation From</h4>
+    </header>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="navbar navbar-default">          
+          <form class="navbar-form navbar-left" role="search">
+            <span style="color:#FFF">Enter Id No:</span> 
+            <div class="input-group">              
+              <input type="text" data-ng-model="searchText" class="novalidate form-control" />
+              <span id="searchclear" ng-click="clear()" ng-show="searchText!=''" class="glyphicon glyphicon-remove-circle"></span>
+              <div class="input-group-btn">
+                <button class="btn btn-info" ng-disabled="searchText==''" data-ng-click="searchData()">
+                  <span class="glyphicon glyphicon-search"></span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="well bs-component">
+          <form name="editForm" novalidate class="form-horizontal">
+            <fieldset>
+              <div class="MediaEdit">
+                <div class="form-group">
+                  <div class="col-md-2">
+                    Province:
+                  </div>
+                  <div class="col-md-2">
+                    <input type="text" id="province" name="province" class="form-control" data-ng-keyup="captureForm('province', 'district')" data-ng-model="form.province" required />
+                  </div>
+                  <div class="col-md-8">
+                    {{showProvince}}
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-2">
+                    District / Region:
+                  </div>
+                  <div class="col-md-10">
+                    <input type="text" id="district" name="district" class="form-control" data-ng-model="form.district" />
+                  </div>
+                </div>
+                <div>
+                  <b>Section A:  General organisation and administration</b><br /><hr />
+                </div>
+                <div class="form-group">
+                  <div class="col-md-5">
+                    The <b>invitation</b> and information regarding the training was:
+                  </div>
+                  <div class="col-md-2">
+                    <input type="text" id="invitation" name="invitation" class="form-control" data-ng-keyup="captureForm('invitation', 'venue')" data-ng-model="form.invitation" />
+                  </div>
+                  <div class="col-md-5">
+                    {{showInvitaton}}
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-md-5">
+                    The <b>venue</b> where we received the training was:
+                  </div>
+                  <div class="col-md-2">
+                    <input type="text" id="venue" name="venue" class="form-control" data-ng-keyup="captureForm('venue', 'refreshments')" data-ng-model="form.venue" />
+                  </div>
+                  <div class="col-md-5">
+                    {{showVenue}}
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-5">
+                    The <b>refreshments</b> provided during the course were:
+                  </div>
+                  <div class="col-md-2">
+                    <input type="text" id="refreshments" name="refreshments" class="form-control" data-ng-keyup="captureForm('refreshments', 'length')" data-ng-model="form.refreshments" />
+                  </div>
+                  <div class="col-md-5">
+                    {{showRefreshments}}
+                  </div>
+                </div>
+                <div>
+                  <b>Section B:  Facilitation of the training</b><br /><hr />
+                </div>
+                <div class="form-group">
+                  <div class="col-md-5">
+                    The <b>length</b> of the training was:
+                  </div>
+                  <div class="col-md-2">
+                    <input type="text" id="length" name="length" class="form-control" data-ng-keyup="captureForm('length', 'presentationSkills')" data-ng-model="form.length" />
+                  </div>
+                  <div class="col-md-5">
+                    {{showLength}}
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-5">
+                    The facilitator's <b>presentation skills</b> were:
+                  </div>
+                  <div class="col-md-2">
+                    <input type="text" id="presentationSkills" name="presentationSkills" class="form-control" data-ng-keyup="captureForm('presentationSkills', 'activities')" data-ng-model="form.presentationSkills" />
+                  </div>
+                  <div class="col-md-5">
+                    {{showPresentationSkills}}
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-5">
+                    The <b>activities </b> in this course were:
+                  </div>
+                  <div class="col-md-2">
+                    <input type="text" id="activities" name="activities" class="form-control" data-ng-keyup="captureForm('activities', 'receive')" data-ng-model="form.activities" />
+                  </div>
+                  <div class="col-md-5">
+                    {{showActivities}}
+                  </div>
+                </div>
+                <div>
+                  <b>Section C:  Training Content</b><br /><hr />
+                </div>
+                <div class="form-group">
+                  <div class="col-md-5">
+                    Did you <b>receive</b> a copy of the Managing My Finance file?:
+                  </div>
+                  <div class="col-md-2">
+                    <input type="text" id="receive" name="receive" class="form-control" data-ng-keyup="captureForm('receive', 'newKnowledge')" data-ng-model="form.receive" />
+                  </div>
+                  <div class="col-md-5">
+                    {{showReceive}}
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-5">
+                    I feel that my <b>new knowledge</b> of the Managing My Finance Resource is:
+                  </div>
+                  <div class="col-md-2">
+                    <input type="text" id="newKnowledge" name="newKnowledge" class="form-control" data-ng-keyup="captureForm('newKnowledge', 'practicalNature')" data-ng-model="form.newKnowledge" />
+                  </div>
+                  <div class="col-md-5">
+                    {{showNewKnowledge}}
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-5">
+                    The <b>practical nature</b> of the training was:
+                  </div>
+                  <div class="col-md-2">
+                    <input type="text" id="practicalNature" name="practicalNature" class="form-control" data-ng-keyup="captureForm('practicalNature', 'preparedToImplement')" data-ng-model="form.practicalNature" />
+                  </div>
+                  <div class="col-md-5">
+                    {{showPracticalNature}}
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-5">
+                    How well ave i been  <b>prepared to implement</b> the Managing My Finance Resource?
+                  </div>
+                  <div class="col-md-2">
+                    <input type="text" id="preparedToImplement" name="preparedToImplement" class="form-control" data-ng-keyup="captureForm('preparedToImplement', 'meaningful')" data-ng-model="form.preparedToImplement" />
+                  </div>
+                  <div class="col-md-5">
+                    {{showPreparedToImplement}}
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-5">
+                    Which section of the training was the most <b>meaningful / interesting?</b>:
+                  </div>
+                  <div class="col-md-7">
+                    <textarea type="text" id="meaningful" name="meaningful" class="form-control" data-ng-model="form.meaningful" rows="3"></textarea>
+                  </div>
+                </div>
+                <div>
+                  <b>Section D:  General comments</b><br /><hr />
+                </div>
+                <div class="form-group">
+                  <div class="col-md-5">
+                    Would you recommend this resource?
+                  </div>
+                  <div class="col-md-2">
+                    <input type="text" id="recommend" name="recommend" class="form-control" data-ng-keyup="captureForm('recommend', 'recommendWhy')" data-ng-model="form.recommend" />
+                  </div>
+                  <div class="col-md-5">
+                    {{showRecommend}}
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-5">
+                    <b>Why:</b>
+                  </div>
+                  <div class="col-md-7">                    
+                    <input type="text" id="recommendWhy" name="recommendWhy" class="form-control" data-ng-keyup="captureForm('recommendWhy', 'comments')" data-ng-model="form.recommendWhy" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-5">
+                    <b>General comments, suggestions, recommendations:</b>
+                  </div>
+                  <div class="col-md-7">
+                    <textarea type="text" id="comments" name="comments" class="form-control" data-ng-model="form.comments" rows="3"></textarea>
+                  </div>
+                </div>                
+                <div class="form-actions">
+                  <div class="col-md-2">
+                  </div>
+                  <button ng-click="saveData()" class="btn btn-primary">
+                    {{crud}}
+                  </button>
+                  <button ng-show="crud!='Add'" ng-click="init()" class="btn btn-primary">
+                    cancel
+                  </button>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
