@@ -41,6 +41,7 @@ app.controller('captureController', ['$scope', '$http', 'ngSettings', '$routePar
     $scope.showLength = '';
     $scope.crud = 'Add';
     $('#province').select();
+    $('html, body').animate({ scrollTop: 0 }, 500);
   }
 
   $scope.clear = function () {
